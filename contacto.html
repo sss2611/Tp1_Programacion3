@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Sonidos de la Ciudad</title>
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad">
+        <h1>Contacto</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="artistas.html">Artistas</a></li>
+            <li><a href="cronograma.html">Cronograma</a></li>
+            <li><a href="entradas.html">Entradas</a></li>
+            <li><a href="ubicacion.html">Ubicación</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Formulario de Contacto</h2>
+            <p>¿Tienes alguna pregunta? Escríbenos y te responderemos a la brevedad.</p>
+            
+            <form action="#">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                
+                <div>
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                
+                <div>
+                    <label for="asunto">Asunto:</label>
+                    <select id="asunto" name="asunto">
+                        <option value="">Selecciona un asunto</option>
+                        <option value="entradas">Consulta sobre entradas</option>
+                        <option value="artistas">Información sobre artistas</option>
+                        <option value="patrocinio">Oportunidades de patrocinio</option>
+                        <option value="prensa">Prensa y medios</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Recibir informacion del festival</label>
+                </div>
+                
+                <button>Enviar Mensaje</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Otras formas de contacto</h2>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:info@sonidosdelaciudad.com">info@sonidosdelaciudad.com</a></li>
+                <li><strong>Teléfono:</strong> <a href="tel:+541112345678">+54 11 1234-5678</a></li>
+                <li><strong>Redes Sociales:</strong> 
+                    <a href="https://facebook.com/sonidosdelaciudad" target="_blank">Facebook</a>, 
+                    <a href="https://instagram.com/sonidosdelaciudad" target="_blank">Instagram</a>, 
+                    <a href="https://twitter.com/sonidosciudad" target="_blank">Twitter</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sonidos de la Ciudad. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
