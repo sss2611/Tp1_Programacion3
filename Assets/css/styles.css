@@ -1,26 +1,47 @@
- /* Estilos generales */ 
+/* Selector Universal: Asegura que el modelo de caja sea igua en todos los navegadores */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    /* Google Font */
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color: #333;
     background-color: #f4f4f4;
+    font-size: 1em;
 }
 
-header {
+#main-header {
     background: #1a1a2e;
     color: #fff;
     padding: 1rem 0;
+    height: 260px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+}
+
+#main-header:hover {
+    background: #2b2b4a;
 }
 
 .logo {
     width: 100%;
     height: auto;
-    max-height: 150px;
-    object-fit: cover; 
+    max-height: 140px;
+    object-fit: cover;
     object-position: center;
+    /* Transformación al pasar el mouse */
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 nav {
@@ -28,7 +49,8 @@ nav {
     padding: 0.5rem 0;
 }
 
-nav ul {
+/* Selector de Hijo Directo de nav */
+nav > ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -38,16 +60,25 @@ nav ul {
 
 nav ul li {
     margin: 0 15px;
+    transition: margin 0.3s ease-in-out;
+}
+
+nav ul li:hover {
+    margin: 0 20px; 
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    /* cambia el color del enlace */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
     color: #e94560;
+    /*Rotación */
+    transform: translateY(-3px);
 }
 
 main {
@@ -62,9 +93,10 @@ footer {
     text-align: center;
     padding: 1rem 0;
     margin-top: 20px;
+    /*VW para el tamaño de fuente se adaptable al ancho de la ventana */
+    font-size: 0.9vw;
 }
 
-   /* Estilos específicos */
 .artistas-destacados {
     display: flex;
     justify-content: space-around;
@@ -80,12 +112,33 @@ footer {
     margin: 10px;
     width: 200px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.artista:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 .artista img {
     width: 100%;
     border-radius: 50%;
+}
+
+.artista a {
+    text-decoration: none; 
+    border: none; 
+    display: block;
+}
+
+.artista a img {
+    transition: transform 0.3s ease-in-out; 
+}
+
+.artista a:hover img {
+    transform: scale(1.05); 
 }
 
 .generos ul {
@@ -103,6 +156,11 @@ footer {
     margin: 5px;
     border-radius: 20px;
     list-style: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.generos li:hover {
+    background: #d13454;
 }
 
 table {
@@ -111,11 +169,14 @@ table {
     margin: 20px 0;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid #ddd;
 }
 
-th, td {
+th,
+td {
     padding: 12px;
     text-align: left;
 }
@@ -129,7 +190,31 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-   /* Formulario  */
+h2 {
+    margin-top: 15px;
+    font-style: italic;
+    color: #555;
+}
+
+
+h2::before {
+    content: "🎵 "; /* Añade un icono antes del texto */
+    color: #e94560;
+    font-size: 0.8em; /* Tamaño relativo al tamaño del h2 */
+}
+
+/* Estilos para iconos de Font Awesome */
+.fa-icon {
+    margin-right: 5px;
+    color: #e94560;
+    transition: transform 0.2s ease-in-out;
+}
+
+.fa-icon:hover {
+    transform: rotate(15deg);
+}
+
+/* Formulario */
 .form-group {
     margin-bottom: 15px;
 }
@@ -158,29 +243,102 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 button:hover {
     background: #d13454;
+    transform: scale(1.02);
 }
 
-   /* Responsive  */
+/* Ajuste para que los iframes sean responsivos */
+iframe {
+    width: 100%;
+    /*vh para la altura mínima */
+    min-height: 40vh;
+    border: none;
+}
+
+
+/* Responsive */
+
+/* --- Dispositivo móvil (hasta 768px) --- */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         align-items: center;
     }
-    
+
     nav ul li {
         margin: 5px 0;
     }
-    
+
     .artistas-destacados {
         flex-direction: column;
         align-items: center;
     }
-    
+
+    .artista {
+        width: 90%; /* Ancho más grande para móviles */
+        margin: 10px auto;
+    }
+
+    footer {
+        font-size: 1em; /* Ajuste para que la fuente del footer sea legible en móvil */
+    }
+
     iframe {
-        width: 100%;
+        min-height: 30vh; /* Altura más pequeña para móviles */
+    }
+}
+
+/* --- Tablet (de 769px a 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    main {
+        padding: 15px;
+    }
+
+    .artistas-destacados {
+        justify-content: center; /* Centrar elementos en tablets */
+    }
+
+    .artista {
+        width: 250px; /* Ancho un poco mayor para tablets */
+        margin: 15px;
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Margen reducido para tablet */
+    }
+
+    footer {
+        font-size: 1.1em; /* Ajuste de tamaño de fuente para tablet */
+    }
+
+    iframe {
+        min-height: 50vh; /* Altura para tablets */
+    }
+}
+
+/* --- PC de escritorio (a partir de 1025px) --- */
+@media (min-width: 1025px) {
+    main {
+        padding: 30px;
+    }
+
+    nav ul li {
+        margin: 0 20px; /* Margen mayor para escritorio */
+    }
+
+    .artista {
+        width: 280px; /* Ancho preferido para escritorio */
+    }
+
+    footer {
+        font-size: 1.2vw; /* Escala de fuente para escritorio */
+    }
+
+    iframe {
+        min-height: 60vh; /* Altura para escritorio */
     }
 }

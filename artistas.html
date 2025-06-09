@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-    <header>
+    <header id="main-header">
         <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo">
         <h1>Artistas</h1>
     </header>
@@ -25,28 +27,32 @@
     </nav>
 
     <main>
-        <section class="artistas">
-            <article>
+        <section class="artistas-destacados">
+            <article class="artista" id="nestor-garnica">
                 <h2>Nestor Garnica</h2>
-                <p>Néstor Garnica (n. en La Banda, Santiago del Estero, en 1972) es un reconocido violinista y cantante argentino de folclore.</p>
-                <audio controls>
+                <p>Néstor Garnica (n. en La Banda, Santiago del Estero, en 1972) es un reconocido violinista y cantante
+                    argentino de folclore.</p>
+                <img src="assets/img/nestor_garnica.jpg" alt="Nestor Garnica" class="artista-img"> <audio controls>
                     <source src="assets/audio/artista1.MP3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
                 </audio>
             </article>
 
-            <article>
+            <article class="artista" id="maxi-medina">
                 <h2>Maxi Medina</h2>
                 <p>Pionero de la escena electrónica local con influencias internacionales.</p>
-                <audio controls>
+                <img src="assets/img/maxi_medina.jpg" alt="Maxi Medina" class="artista-img"> <audio controls>
                     <source src="assets/audio/artista2.MP3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
                 </audio>
             </article>
-
-            <article>
+            <article class="artista" id="monde-flos">
                 <h2>Monde Flo’s</h2>
-                <p>La banda santiagueña, integrada por Florian Vigne, Juan Baudano, José Olivera y Jerónimo Díaz, está lista para presentar su primer álbum titulado “Yo Quisiera”.</p>
-                <audio controls>
+                <p>La banda santiagueña, integrada por Florian Vigne, Juan Baudano, José Olivera y Jerónimo Díaz, está
+                    lista para presentar su primer álbum titulado “Yo Quisiera”.</p>
+                <img src="assets/img/monde_flos.jpg" alt="Monde Flo’s" class="artista-img"> <audio controls>
                     <source src="assets/audio/artista3.MP3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
                 </audio>
             </article>
         </section>
@@ -56,4 +62,5 @@
         <p>&copy; 2025 Sonidos de la Ciudad. Todos los derechos reservados.</p>
     </footer>
 </body>
+
 </html>
