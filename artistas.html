@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artistas - Sonidos de la Ciudad</title>
-    <link rel="stylesheet" href="./Assets/css/consigna2.css">
-    <link rel="icon" href="./Assets/img/favicon.ico" type="image/x-icon">
+    <title>Sonidos de la Ciudad - Festival de Música Local</title>
+    <link rel="stylesheet" href="Assets/css/consigna2.css">
+    <link rel="icon" href="Assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <header id="main-header">
-        <img src="assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo">
+        <img src="Assets/img/logo.png" alt="Logo Sonidos de la Ciudad" class="logo">
         <h1>Artistas</h1>
     </header>
 
@@ -27,39 +30,63 @@
     </nav>
 
     <main>
-        <section class="artistas-destacados">
-            <article class="artista" id="nestor-garnica">
-                <h2>Nestor Garnica</h2>
-                <p>Néstor Garnica (n. en La Banda, Santiago del Estero, en 1972) es un reconocido violinista y cantante
-                    argentino de folclore.</p>
-                <img src="assets/img/nestor_garnica.jpg" alt="Nestor Garnica" class="artista-img"> <audio controls>
-                    <source src="assets/audio/artista1.MP3" type="audio/mpeg">
+        <section class="sonido-artistas">
+
+            <article id="nestor-garnica">
+                <img src="./Assets/img/artistas/nestor.png" alt="Néstor Garnica" class="artista-img">
+                <h2>Néstor Garnica</h2>
+                <p>Néstor Garnica (n. en La Banda, Santiago del Estero, en 1972) es un reconocido violinista y cantante argentino de folclore.</p>
+                <audio controls aria-label="Reproducir audio de Néstor Garnica">
+                    <source src="./Assets/audio/nestor.mp3" type="audio/mpeg">
                     Tu navegador no soporta el elemento de audio.
                 </audio>
             </article>
 
-            <article class="artista" id="maxi-medina">
-                <h2>Maxi Medina</h2>
-                <p>Pionero de la escena electrónica local con influencias internacionales.</p>
-                <img src="assets/img/maxi_medina.jpg" alt="Maxi Medina" class="artista-img"> <audio controls>
-                    <source src="assets/audio/artista2.MP3" type="audio/mpeg">
+            <article id="dani-hoyos">
+                <img src="./Assets/img/artistas/dani.png" alt="Dani Hoyos" class="artista-img">
+                <h2>Dani Hoyos</h2>
+                <p>Cantante y compositor argentino de cumbia,conocido por su carrera con la banda Kalama Tropical.</p>
+                <audio controls aria-label="Reproducir audio de Monde Flo’s">
+                    <source src="./Assets/audio/dani.mp3" type="audio/mpeg">
                     Tu navegador no soporta el elemento de audio.
                 </audio>
             </article>
-            <article class="artista" id="monde-flos">
+
+            <article id="monde-flos">
+                <img src="./Assets/img/artistas/monde.png" alt="Monde Flo’s" class="artista-img">
                 <h2>Monde Flo’s</h2>
-                <p>La banda santiagueña, integrada por Florian Vigne, Juan Baudano, José Olivera y Jerónimo Díaz, está
-                    lista para presentar su primer álbum titulado “Yo Quisiera”.</p>
-                <img src="assets/img/monde_flos.jpg" alt="Monde Flo’s" class="artista-img"> <audio controls>
-                    <source src="assets/audio/artista3.MP3" type="audio/mpeg">
+                <p>La banda santiagueña, integrada por Florian Vigne, Juan Baudano, José Olivera y Jerónimo Díaz, está lista para presentar su primer álbum titulado “Yo Quisiera”.</p>
+                <audio controls aria-label="Reproducir audio de Monde Flo’s">
+                    <source src="./Assets/audio/monde.mp3" type="audio/mpeg">
                     Tu navegador no soporta el elemento de audio.
                 </audio>
             </article>
         </section>
-    </main>
+    </main> 
 
-    <footer>
+      <footer>
         <p>&copy; 2025 Sonidos de la Ciudad. Todos los derechos reservados.</p>
+        <div class="redes-sociales">
+            <a href="https://facebook.com/FestivaldelaSalamanca" target="_blank"
+                aria-label="Visita nuestra página de Facebook">
+                <i class="fab fa-facebook-square fa-3x fa-icon"></i>
+            </a>
+            <a href="https://instagram.com/sonidosdelaciudad" target="_blank" aria-label="Síguenos en Instagram">
+                <i class="fab fa-instagram-square fa-3x fa-icon"></i>
+            </a>
+            <a href="https://twitter.com/sonidosciudad" target="_blank" aria-label="Síguenos en Twitter">
+                <i class="fab fa-twitter-square fa-3x fa-icon"></i>
+            </a>
+            <p style="margin-top: 10px;">¡Síguenos en nuestras redes!</p>
+            <iframe
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFestivaldelaSalamanca&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId"
+                width="350" height="380" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+        <a href="#" class="boton-subir" aria-label="Subir al inicio">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </footer>
 </body>
 
