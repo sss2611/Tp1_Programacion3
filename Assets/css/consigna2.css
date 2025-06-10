@@ -1,10 +1,12 @@
-/* Selector Universal: Asegura que el modelo de caja sea igua en todos los navegadores */
+/* ---------- CSS de la Consiga 1 + Consigna 2 ---------- */
+
+/* ---------- ENTREGABLE I: Maquetación tradicional ---------- */
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    /* Google Font */
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
@@ -17,7 +19,7 @@ body {
 #main-header {
     background: #1a1a2e;
     color: #fff;
-    padding: 1rem 0;
+    padding: 1rem;
     height: 260px;
     text-align: center;
     position: sticky;
@@ -27,7 +29,11 @@ body {
 }
 
 #main-header:hover {
-    background: #2b2b4a;
+    background-image: url('../img/DevTeam.png');
+    /*animación con el logo del grupo */
+    background-repeat: no-repeat;
+    background-position: bottom right 400px;
+    background-size: 110px 110px;
 }
 
 .logo {
@@ -36,8 +42,8 @@ body {
     max-height: 140px;
     object-fit: cover;
     object-position: center;
-    /* Transformación al pasar el mouse */
-    transition: transform 0.3s ease-in-out;
+    float: left;
+    margin-left: 15px;
 }
 
 .logo:hover {
@@ -49,36 +55,26 @@ nav {
     padding: 0.5rem 0;
 }
 
-/* Selector de Hijo Directo de nav */
-nav > ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+nav ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
 nav ul li {
-    margin: 0 15px;
-    transition: margin 0.3s ease-in-out;
-}
-
-nav ul li:hover {
-    margin: 0 20px; 
+    display: inline-block;
+    margin: 0 10px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    /* cambia el color del enlace */
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
     color: #e94560;
-    /*Rotación */
-    transform: translateY(-3px);
 }
 
 main {
@@ -87,20 +83,76 @@ main {
     margin: 0 auto;
 }
 
+
+article {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    text-align: center;
+}
+
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
 footer {
     background: #1a1a2e;
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1rem;
+    font-size: 1em;
+}
+
+/* ---------- ENTREGABLE II: Maquetación moderna con Grid y Flexbox ---------- */
+
+.sonido-artistas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+}
+
+.artista-img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.redes-sociales {
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.redes-sociales iframe {
+    width: 35%;
+    height: 40vh;
     margin-top: 20px;
-    /*VW para el tamaño de fuente se adaptable al ancho de la ventana */
-    font-size: 0.9vw;
+    border: none;
+}
+
+.boton-subir {
+    font-size: 24px;
+    color: #f7f2f2;
+    text-decoration: none;
+}
+
+.boton-subir:hover {
+    color: #e94560;
 }
 
 .artistas-destacados {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     margin: 20px 0;
     padding-top: 10px;
 }
@@ -124,29 +176,28 @@ footer {
 
 .artista img {
     width: 100%;
+    height: auto;
     border-radius: 50%;
 }
 
 .artista a {
-    text-decoration: none; 
-    border: none; 
+    text-decoration: none;
+    border: none;
     display: block;
 }
 
 .artista a img {
-    transition: transform 0.3s ease-in-out; 
+    transition: transform 0.3s ease-in-out;
 }
 
 .artista a:hover img {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .generos ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 10px;
-    max-width: max-content;
 }
 
 .generos li {
@@ -156,29 +207,11 @@ footer {
     margin: 5px;
     border-radius: 20px;
     list-style: none;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.generos li:hover {
-    background: #d13454;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-}
-
-table,
-th,
-td {
-    border: 1px solid #ddd;
-}
-
-th,
-td {
-    padding: 12px;
-    text-align: left;
 }
 
 th {
@@ -186,32 +219,10 @@ th {
     color: white;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-h2 {
-    margin-top: 15px;
-    font-style: italic;
-    color: #555;
-}
-
-
-h2::before {
-    content: "🎵 "; /* Añade un icono antes del texto */
-    color: #e94560;
-    font-size: 0.8em; /* Tamaño relativo al tamaño del h2 */
-}
-
-/* Estilos para iconos de Font Awesome */
-.fa-icon {
-    margin-right: 5px;
-    color: #e94560;
-    transition: transform 0.2s ease-in-out;
-}
-
-.fa-icon:hover {
-    transform: rotate(15deg);
+td,
+th {
+    padding: 10px;
+    border: 1px solid #ddd;
 }
 
 /* Formulario */
@@ -251,10 +262,8 @@ button:hover {
     transform: scale(1.02);
 }
 
-/* Ajuste para que los iframes sean responsivos */
 iframe {
     width: 100%;
-    /*vh para la altura mínima */
     min-height: 40vh;
     border: none;
 }
@@ -279,16 +288,16 @@ iframe {
     }
 
     .artista {
-        width: 90%; /* Ancho más grande para móviles */
+        width: 90%;
         margin: 10px auto;
     }
 
     footer {
-        font-size: 1em; /* Ajuste para que la fuente del footer sea legible en móvil */
-    }
+        font-size: 1em;
 
-    iframe {
-        min-height: 30vh; /* Altura más pequeña para móviles */
+        iframe {
+            min-height: 30vh;
+        }
     }
 }
 
@@ -299,26 +308,28 @@ iframe {
     }
 
     .artistas-destacados {
-        justify-content: center; /* Centrar elementos en tablets */
+
+        justify-content: center;
     }
 
     .artista {
-        width: 250px; /* Ancho un poco mayor para tablets */
+        width: 250px;
         margin: 15px;
     }
 
     nav ul li {
-        margin: 0 10px; /* Margen reducido para tablet */
+        margin: 0 10px;
     }
 
     footer {
-        font-size: 1.1em; /* Ajuste de tamaño de fuente para tablet */
+        font-size: 1.1em;
     }
 
     iframe {
-        min-height: 50vh; /* Altura para tablets */
+        min-height: 50vh;
     }
 }
+
 
 /* --- PC de escritorio (a partir de 1025px) --- */
 @media (min-width: 1025px) {
@@ -327,18 +338,18 @@ iframe {
     }
 
     nav ul li {
-        margin: 0 20px; /* Margen mayor para escritorio */
+        margin: 0 20px;
     }
 
     .artista {
-        width: 280px; /* Ancho preferido para escritorio */
+        width: 280px;
     }
 
     footer {
-        font-size: 1.2vw; /* Escala de fuente para escritorio */
+        font-size: 1.2vw;
     }
 
     iframe {
-        min-height: 60vh; /* Altura para escritorio */
+        min-height: 60vh;
     }
 }
